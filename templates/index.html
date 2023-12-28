@@ -1,0 +1,318 @@
+{% load static %}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="">
+<![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="">
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal Portfolio Template">
+    <meta name="author" content="TeamXcel">
+
+    <title>{{geeks.title1}}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{geeks.logo.url}}">
+
+    <!-- Themify Icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <!-- Elegant Line Icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/elegant-line-icons.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Slicknav CSS -->
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <!-- OWL-Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <!-- Venobox CSS -->
+    <link rel="stylesheet" href="{% static 'css/venobox.css' %}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+</head>
+
+<body data-spy="scroll" data-target="#navmenu" data-offset="70">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="site-preloader-wrap">
+        <div class="spinner-wrap">
+            <div class="spinner"></div>
+        </div>
+    </div><!-- Preloader -->
+
+    <header id="header" class="header-section">
+        <div class="container">
+            <nav class="navbar">
+                <div class="d-flex menu-wrap">
+                    <div id="navmenu" class="mainmenu">
+                        <ul class="nav">
+                            <li><a data-scroll class="nav-link active" href="{% url 'index' %}">Главная <span class="sr-only">(current)</span></a></li>
+                            <li><a data-scroll class="nav-link" href="#about">Онас</a></li>
+                            <li><a data-scroll class="nav-link" href="#services">Преимущества</a></li>
+                            <li><a data-scroll class="nav-link" href="#reviews">Работы Выпускников</a></li>
+                            <li><a data-scroll class="nav-link" href="#contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--.header-section -->
+
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row hero-wrap">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <h3 class="sub-heading wow fadeInUp" data-wow-delay="200ms">{{geeks.title1}}</h3>
+                        <h1 class="heading wow fadeInUp" data-wow-delay="300ms">{{geeks.title2}}</h1>
+                        <p class="desc wow fadeInUp" data-wow-delay="400ms">{{geeks.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--.hero-section-->
+
+    <section id="about" class="about-section bd-bottom padding">
+        <div class="container">
+            <div class="row about-wrap d-flex align-items-center">
+                <div class="col-lg-5 sm-padding">
+                    <div class="about-bg wow fadeInLeft" data-wow-delay="100ms">
+                        <img src="{{about.image.url}}" alt="img">
+                    </div>
+                </div>
+                <div class="col-lg-7 sm-padding">
+                    <div class="about-content">
+                        <h2><span class="wow fadeInUp" data-wow-delay="100ms">{{about.title}}</span> <br></h2>
+                        <p class="wow fadeInUp" data-wow-delay="500ms">{{about.description}}</p>
+                    </div>
+                    <div class="cv-btn">
+                        <a href="#" class="default-btn wow fadeInUp" data-wow-delay="900ms">Записаться на курсы</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/.about-section-->
+
+    <section id="services" class="service-section bg-grey bd-bottom padding">
+        <div class="container">
+            <div class="section-heading text-center mb-40">
+                <h2 class="wow fadeInUp">{{why.title1}}</h2>
+            </div>
+            <!--/.section-heading-->
+            <div class="service-wrap row">
+                {% for benefits in benefits %}
+                <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="100ms">
+                    <div class="service-item text-center">
+                        <h3><span>{{benefits.title}}</span></h3>
+                        <p>{{benefits.description}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!--/.service-section-->
+
+    <section class="counter-section padding overlay">
+        <div class="container">
+            <div class="counter-wrap row">
+                <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="100ms">
+                    <div class="counter-item text-center">
+                        <i class="icon-documents"></i>
+                        <h3 class="counter">{{count.student_count}}</h3>
+                        <h4>Студенты</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="300ms">
+                    <div class="counter-item text-center">
+                        <i class="icon-happy"></i>
+                        <h3 class="counter">{{count.teacher_count}}</h3>
+                        <h4>Учителя</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="500ms">
+                    <div class="counter-item text-center">
+                        <i class="icon-wine"></i>
+                        <h3 class="counter">{{count.mentors_count}}</h3>
+                        <h4>Ментора</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="700ms">
+                    <div class="counter-item text-center">
+                        <i class="icon-trophy"></i>
+                        <h3 class="counter">{{count.branches_count}}</h3>
+                        <h4>Филиалы</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/.counter-section-->
+
+    <section id="reviews" class="testimonial-section bg-grey bd-bottom padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-none d-lg-block d-md-block">
+                    <div class="clients-thumb">
+                        <div class="ct-thumb thumb-1"></div>
+                        <div class="ct-thumb thumb-2"></div>
+                        <div class="ct-thumb thumb-3"></div>
+                        <div class="ct-thumb thumb-4"></div>
+                        <div class="ct-thumb thumb-5"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="section-heading">
+                        <h2 class="wow fadeInUp" data-wow-delay="100ms">ВЫПУСКНЫЕ РАБОТЫ СТУДЕНТОВ</h2>
+                    </div>
+                    <!--/.section-heading-->
+                    <div id="testimonial-carousel" class="testimonial-carousel owl-carousel wow fadeInUp" data-wow-delay="300ms">
+                        
+                        {% for work in works %}
+                        <div class="testi-item">
+                            <img src="{{work.image.url}}" alt="img">
+                            <h3> <span>{{work.title}}</span></h3>
+                            <div class="testi-thumb">
+                                <p>{{work.description}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="testi-item">
+                            <p></p>
+                            <div class="testi-thumb">
+                                <h3></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--.testimonial-section-->
+
+    <section id="contact" class="contact-section padding">
+        <div class="container">
+            <div class="contact-wrapper d-flex align-items-center row">
+                <div class="col-lg-5 col-md-6 sm-padding">
+                    <div class="contact-info">
+                        <div class="section-heading mb-20">
+                            <h2 class="wow fadeInUp" data-wow-delay="100ms">Свяжитесь с нами</h2>
+                        </div>
+                        <!--/.section-heading-->
+                        <p class="wow fadeInUp" data-wow-delay="300ms">Наша вера имеет просьбу, а не то, как утешение очевидно.
+                            До восторга двоюродные братья мы чувствуем минуты. Гений посмотрел
+                            конец разгоревшейся весны.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 sm-padding">
+                    <div class="contact-form">
+                        <form action="contact.php" method="post" id="ajax_form" class="form-horizontal">
+                            <div class="form-group colum-row row wow fadeInUp" data-wow-delay="500ms">
+                                <div class="col-sm-6">
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group row wow fadeInUp" data-wow-delay="700ms">
+                                <div class="col-md-12">
+                                    <textarea id="message" name="message" cols="30" rows="5" class="form-control message" placeholder="Message" required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row wow fadeInUp" data-wow-delay="900ms">
+                                <div class="col-md-12">
+                                    <button id="submit" class="default-btn" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                            <div id="form-messages" class="alert" role="alert"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/.contact-section-->
+
+    <section class="widget-section padding">
+        <div class="container">
+            <div class="widget-content text-center">
+                <h2 class="wow fadeInUp" data-wow-delay="100ms">Приступим к работе! <span>!</span></h2>
+                <a class="mb-15 wow fadeInUp" data-wow-delay="200ms" href="#">office@geeks.kg</a>
+                <a href="tel:+996 (507) 05 2018" class=" wow fadeInUp" data-wow-delay="300ms">+996 (557) 05 2018
+                    +996 (507) 05 2018
+                    +996 (777) 05 2018</a>
+            </div>
+        </div>
+    </section>
+    <!--/.widget-section-->
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-wrap row">
+                <div class="col-md-6">
+                    <ul class="footer-social">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Telegram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="copyright">
+                        <p>&copy; <span id="year"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- /.footer-section -->
+
+    <a data-scroll href="#header" id="scroll-to-top"><i class="ti-angle-up"></i></a>
+
+    <!-- jQuery Lib -->
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!-- Modernizr -->
+    <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <!-- Slicknav JS -->
+    <script src="{% static 'js/vendor/jquery.slicknav.min.js' %}"></script>
+    <!-- OWL-Carousel JS -->
+    <script src="{% static 'js/vendor/owl.carousel.min.js' %}"></script>
+    <!-- Counterup JS -->
+    <script src="{% static 'js/vendor/jquery.counterup.min.js' %}"></script>
+    <!-- Waypoins JS -->
+    <script src="{% static 'js/vendor/jquery.waypoints.v2.0.3.min.js' %}"></script>
+    <!-- Venobox JS -->
+    <script src="{% static 'js/vendor/venobox.min.js' %}"></script>
+    <!-- Image Loaded JS -->
+    <script src="{% static 'js/vendor/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- Isotop JS -->
+    <script src="{% static 'js/vendor/jquery.isotope.v3.0.2.js' %}"></script>
+    <!-- Smooth Scroll JS -->
+    <script src="{% static 'js/vendor/smooth-scroll.min.js' %}"></script>
+    <!-- Wow JS -->
+    <script src="{% static 'js/vendor/wow.min.js' %}"></script>
+    <!-- Contact -->
+    <script src="{% static 'js/contact.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
